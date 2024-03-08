@@ -1,0 +1,6 @@
+@NetAspireTest.WebApi_HostAddress = http://localhost:5183
+
+GET {{NetAspireTest.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
