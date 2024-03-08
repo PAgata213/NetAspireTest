@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetAspireTest.Aspire\NetAspireTest.Aspire.ServiceDefaults\NetAspireTest.Aspire.ServiceDefaults.csproj" />
     <ProjectReference Include="..\NetAspireTest.Shared\NetAspireTest.Shared.csproj" />
   </ItemGroup>
 

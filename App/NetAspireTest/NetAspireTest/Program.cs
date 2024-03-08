@@ -1,3 +1,5 @@
+using NetAspireTest.Client.Pages;
+using NetAspireTest.Components;
 using NetAspireTest.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,17 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddRazorComponents()
+    .AddInteractiveWebAssemblyComponents();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddCors(options =>
-{
-  options.AddPolicy("AllowAll", builder =>
-      builder.AllowAnyOrigin()
-             .AllowAnyMethod()
-             .AllowAnyHeader());
-});
 
 var app = builder.Build();
 
@@ -24,8 +20,15 @@ app.MapDefaultEndpoints();
 // Configure the HTTP request pipeline.
 if(app.Environment.IsDevelopment())
 {
+  app.UseWebAssemblyDebugging();
   app.UseSwagger();
   app.UseSwaggerUI();
+}
+else
+{
+  app.UseExceptionHandler("/Error", createScopeForErrors: true);
+  // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+  app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -50,6 +53,11 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.UseCors("AllowAll");
+app.UseStaticFiles();
+app.UseAntiforgery();
+
+app.MapRazorComponents<App>()
+    .AddInteractiveWebAssemblyRenderMode()
+    .AddAdditionalAssemblies(typeof(NetAspireTest.Client._Imports).Assembly);
 
 app.Run();
