@@ -1,3 +1,4 @@
+using NetAspireTest;
 using NetAspireTest.Client.Pages;
 using NetAspireTest.Components;
 using NetAspireTest.Shared;
@@ -9,6 +10,8 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddHttpClient();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -33,25 +36,7 @@ else
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-  var forecast = Enumerable.Range(1, 5).Select(index =>
-      new WeatherForecast
-      (
-          DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-          Random.Shared.Next(-20, 55),
-          summaries[Random.Shared.Next(summaries.Length)]
-      ))
-      .ToArray();
-  return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+app.RegisterWebApi();
 
 app.UseStaticFiles();
 app.UseAntiforgery();

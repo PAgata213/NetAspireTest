@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\NetAspireTest.Aspire\NetAspireTest.Aspire.ServiceDefaults\NetAspireTest.Aspire.ServiceDefaults.csproj" />
-    <ProjectReference Include="..\..\..\NetAspireTest.Shared\NetAspireTest.Shared.csproj" />
     <ProjectReference Include="..\NetAspireTest.Client\NetAspireTest.Client.csproj" />
+    <ProjectReference Include="..\NetAspireTest.Shared\NetAspireTest.Shared.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />

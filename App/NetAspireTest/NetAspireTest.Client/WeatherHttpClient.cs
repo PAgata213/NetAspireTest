@@ -14,8 +14,8 @@ public class WeatherHttpClient
 
 	public async Task<WeatherForecast[]> GetWeatherForecastsAsync()
 	{
-		var result = await _httpClient.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
-		return result ?? [];
+		var result = await _httpClient.GetFromJsonAsync<WeatherForecast?>("WeatherForecast");
+		return result is not null ? [result] : [];
 	}
 }
 

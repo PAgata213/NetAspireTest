@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\App\NesAspireTest.ExternalWebApi\NesAspireTest.ExternalWebApi.csproj" />
     <ProjectReference Include="..\..\App\NetAspireTest\NetAspireTest\NetAspireTest.csproj" />
   </ItemGroup>
 
