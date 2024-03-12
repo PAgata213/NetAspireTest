@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\App\NesAspireTest.ExternalWebApi\NesAspireTest.ExternalWebApi.csproj" />
+    <ProjectReference Include="..\..\App\NetAspireTest.ExternalWebApi\NetAspireTest.ExternalWebApi.csproj" />
     <ProjectReference Include="..\..\App\NetAspireTest\NetAspireTest\NetAspireTest.csproj" />
   </ItemGroup>
 

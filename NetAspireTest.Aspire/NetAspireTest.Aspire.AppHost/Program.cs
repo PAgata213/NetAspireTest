@@ -1,6 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var externalApi = builder.AddProject<Projects.NesAspireTest_ExternalWebApi>("ExternalWeatherApi");
+var cache = builder.AddRedisContainer("rediscache");
+
+var externalApi = builder.AddProject<Projects.NetAspireTest_ExternalWebApi>("ExternalWeatherApi")
+  .WithReference(cache);
 
 builder.AddProject<Projects.NetAspireTest>("HostedMainApp")
   .WithReference(externalApi);

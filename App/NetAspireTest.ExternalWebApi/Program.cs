@@ -1,8 +1,9 @@
-using NesAspireTest.ExternalWebApi;
+using NetAspireTest.ExternalWebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.AddRedisOutputCache("rediscache");
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -12,6 +13,8 @@ builder.Services.AddHttpClient();
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
+
+app.UseOutputCache();
 
 // Configure the HTTP request pipeline.
 if(app.Environment.IsDevelopment())

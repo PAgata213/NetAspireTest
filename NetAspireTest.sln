@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetAspireTest", "App\NetAsp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetAspireTest.Client", "App\NetAspireTest\NetAspireTest.Client\NetAspireTest.Client.csproj", "{956B42F2-EB01-4416-8F43-A97277888E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAspireTest.Shared", "App\NetAspireTest\NetAspireTest.Shared\NetAspireTest.Shared.csproj", "{19011D1F-4E54-4D2A-A5E1-9C3A00E9BB2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetAspireTest.Shared", "App\NetAspireTest\NetAspireTest.Shared\NetAspireTest.Shared.csproj", "{19011D1F-4E54-4D2A-A5E1-9C3A00E9BB2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NesAspireTest.ExternalWebApi", "App\NesAspireTest.ExternalWebApi\NesAspireTest.ExternalWebApi.csproj", "{83169EB0-B02F-419F-A094-154F62722C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetAspireTest.ExternalWebApi", "App\NetAspireTest.ExternalWebApi\NetAspireTest.ExternalWebApi.csproj", "{83169EB0-B02F-419F-A094-154F62722C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
