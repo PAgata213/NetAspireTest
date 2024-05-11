@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostedmainapp
+  labels:
+    app: hostedmainapp
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hostedmainapp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: hostedmainapp
+    spec:
+      containers:
+      - name: hostedmainapp
+        image: hostedmainapp:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: hostedmainapp-env
+      terminationGracePeriodSeconds: 180

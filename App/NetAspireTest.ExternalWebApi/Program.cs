@@ -10,6 +10,20 @@ builder.AddRedisOutputCache("rediscache");
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
+
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowAll",
+    builder =>
+    {
+      builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -26,5 +40,7 @@ if(app.Environment.IsDevelopment())
 app.RegisterWebApi();
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.Run();

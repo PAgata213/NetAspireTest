@@ -1,0 +1,9 @@
+resources:
+- ExternalWeatherApi
+- HostedMainApp
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+

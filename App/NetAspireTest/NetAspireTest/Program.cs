@@ -1,7 +1,5 @@
 using NetAspireTest;
-using NetAspireTest.Client.Pages;
 using NetAspireTest.Components;
-using NetAspireTest.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 

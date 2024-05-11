@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: externalweatherapi
+  labels:
+    app: externalweatherapi
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: externalweatherapi
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: externalweatherapi
+    spec:
+      containers:
+      - name: externalweatherapi
+        image: externalweatherapi:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: externalweatherapi-env
+        - secretRef:
+            name: externalweatherapi-secrets
+      terminationGracePeriodSeconds: 180
