@@ -3,7 +3,7 @@ using NetAspireTest.ExternalWebApi;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddRedisOutputCache("rediscache");
+builder.AddRedisOutputCache("rediscache", x => x.ConnectionString = "rediscache");
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -17,10 +17,9 @@ builder.Services.AddCors(options =>
     builder =>
     {
       builder
-        .AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader()
-        .AllowCredentials();
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader();
     });
 });
 

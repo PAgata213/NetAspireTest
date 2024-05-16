@@ -5,7 +5,7 @@ namespace NetAspireTest.ExternalWebApi;
 
 public static class OpenWeatherClient
 {
-  private const string _openWeatherApiKey = "";
+  private const string _openWeatherApiKey = "bec3d8f42b282c9a6651249021d1e94a";
   public static WebApplication RegisterWebApi(this WebApplication app)
   {
     app.MapGet("/openweather", GetOpenWeatherDataAsync)

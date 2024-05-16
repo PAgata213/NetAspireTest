@@ -1,7 +1,17 @@
 {
   "resources": {
     "rediscache": {
-      "type": "redis.v0"
+      "type": "container.v0",
+      "image": "redis:latest",
+      "bindings": {
+        "tcp": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp",
+          "containerPort": 6379
+        }
+      },
+      "connectionString": "{rediscache.bindings.tcp.host}:{rediscache.bindings.tcp.port}"
     },
     "ExternalWeatherApi": {
       "type": "project.v0",

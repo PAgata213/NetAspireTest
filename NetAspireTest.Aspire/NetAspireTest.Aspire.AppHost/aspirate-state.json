@@ -14,11 +14,12 @@
   "includeDashboard": true,
   "useCustomNamespace": false,
   "secrets": {
-    "salt": "oqMyIRgbhkl\u002B3emh",
-    "hash": "\u002B2XASv327oeRxSsSU4CUVugSw23TvSnPh3sBiB/\u002Bf10=",
+    "salt": "o9R0BgXdPULke/2E",
+    "hash": "ggJ63fsyDpdpqIgGWNiNvthXnos13tQgSGE7DeiVeNw=",
     "secrets": {
+      "rediscache": {},
       "ExternalWeatherApi": {
-        "ConnectionStrings__rediscache": "oqMyIRgbhkl\u002B3emhoVAQq\u002BiaMdvyo1MLslx6bvJTMrgZYNOLlsnSAAEbP8ACaId4sC029JQzDXqw"
+        "ConnectionStrings__rediscache": "o9R0BgXdPULke/2Ev2Cm6Gck12puZhwTVuWQD0w0PcpK6OWW6y/i"
       },
       "HostedMainApp": {}
     }
