@@ -4,6 +4,6 @@ using NetAspireTest.Client.Client;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.AddHttpClient<WeatherHttpClient>(x => x.BaseAddress = new Uri("http://localhost:5279"));
+builder.Services.AddHttpClient<WeatherHttpClient>(x => x.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 await builder.Build().RunAsync();

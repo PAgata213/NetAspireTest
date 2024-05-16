@@ -1,4 +1,5 @@
 resources:
+- rediscache
 - ExternalWeatherApi
 - HostedMainApp
 - dashboard.yaml
