@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>75c4d4a0-2914-4b64-90c5-17718d0991c8</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting" Version="9.0.0-preview.3.24210.17" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0-preview.3.24210.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetAspire9.ExternalWebApi\NetAspire9.ExternalWebApi.csproj" />
+    <ProjectReference Include="..\NetAspire9\NetAspire9\NetAspire9.csproj" />
+  </ItemGroup>
+
+</Project>

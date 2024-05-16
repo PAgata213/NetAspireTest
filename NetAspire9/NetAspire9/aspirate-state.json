@@ -1,0 +1,8 @@
+{
+  "inputPath": "aspirate-output",
+  "containerImageTags": [
+    "latest"
+  ],
+  "kubeContext": "docker-desktop",
+  "outputFormat": "kustomize"
+}

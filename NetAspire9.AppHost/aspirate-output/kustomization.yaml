@@ -1,0 +1,9 @@
+resources:
+- openWeatherApi
+- mainServer
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+

@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openweatherapi
+  labels:
+    app: openweatherapi
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openweatherapi
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: openweatherapi
+    spec:
+      containers:
+      - name: openweatherapi
+        image: openweatherapi:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: openweatherapi-env
+      terminationGracePeriodSeconds: 180

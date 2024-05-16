@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mainserver
+  labels:
+    app: mainserver
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mainserver
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mainserver
+    spec:
+      containers:
+      - name: mainserver
+        image: mainserver:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: mainserver-env
+      terminationGracePeriodSeconds: 180

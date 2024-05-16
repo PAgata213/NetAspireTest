@@ -1,0 +1,6 @@
+@NetAspire9.ExternalWebApi_HostAddress = http://localhost:5246
+
+GET {{NetAspire9.ExternalWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
